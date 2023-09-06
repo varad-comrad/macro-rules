@@ -9,3 +9,12 @@
 //         $x + comprehension!($($xs),+)
 //     }
 // }
+// macro_rules! map {
+//     () => {
+        
+//     };
+//     ($x:ident) => {
+//         $x
+//     };
+// }
+
