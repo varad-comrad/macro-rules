@@ -15,6 +15,25 @@ macro_rules! vec_comprehension{
 
 pub use vec_comprehension;
 
+
+#[macro_export]
+macro_rules! map_comprehension {
+    ($exp:expr, $var:ident in $cont:expr, $(if $cond:expr)?) => {
+        {
+            let mut aux = HashMap::new();
+            for $var in $cont {
+                $(if $cond)? {
+                    aux.insert($exp.0, $exp.1);
+                }
+            }
+            aux
+        }
+    };
+}
+
+pub use map_comprehension;
+
+
 #[macro_export]
 macro_rules! map {
     ($key:ty, $val:ty) => {
